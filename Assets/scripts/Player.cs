@@ -29,9 +29,9 @@ public class Player : MonoBehaviour
         float yPosition = Mathf.Clamp(transform.position.y, yMin, yMax);
         transform.position = new Vector3(xPosition, yPosition, transform.position.z);
 
-        if (Input.GetAxis("Fire1") > 0 && timerFire >= Period)
+       if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Instantiate(Bullet, BulletPosition);
+            Instantiate(Bullet, transform.position, Quaternion.identity);
             timerFire = 0;
         }
         timerFire = timerFire + Time.deltaTime;timerFire = timerFire + Time.deltaTime;
