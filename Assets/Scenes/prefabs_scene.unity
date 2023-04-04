@@ -344,11 +344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6df08217d14ed5c4caa2249463c28381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
-  xMin: -200
-  xMax: 200
-  yMin: -200
-  yMax: 200
 --- !u!1 &858653907
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,7 +394,7 @@ MonoBehaviour:
   - {fileID: 7818487710082643824, guid: 72773610bf5e18645a3d7e71bca63445, type: 3}
   numberOfRooms: 7
   roomWidth: 28
-  roomHeight: 0
+  roomHeight: 11
   showGizmos: 1
 --- !u!1 &1554799028
 GameObject:

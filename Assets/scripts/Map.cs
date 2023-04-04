@@ -1,17 +1,17 @@
-using System.Collections;
+п»їusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Map : MonoBehaviour
 {
-    public List<GameObject> roomPrefabs; //список макетов комнат
-    public int numberOfRooms; //количество комнат на карте
-    public float roomWidth = 50; //ширина каждой комнаты
-    public float roomHeight = 50; //высота каждой комнаты
-    public bool showGizmos; //отображение гизмо
+    public List<GameObject> roomPrefabs; //СЃРїРёСЃРѕРє РјР°РєРµС‚РѕРІ РєРѕРјРЅР°С‚
+    public int numberOfRooms; //РєРѕР»РёС‡РµСЃС‚РІРѕ РєРѕРјРЅР°С‚ РЅР° РєР°СЂС‚Рµ
+    public float roomWidth = 50; //С€РёСЂРёРЅР° РєР°Р¶РґРѕР№ РєРѕРјРЅР°С‚С‹
+    public float roomHeight = 50; //РІС‹СЃРѕС‚Р° РєР°Р¶РґРѕР№ РєРѕРјРЅР°С‚С‹
+    public bool showGizmos; //РѕС‚РѕР±СЂР°Р¶РµРЅРёРµ РіРёР·РјРѕ
 
 
-    private List<GameObject> spawnedRooms = new List<GameObject>(); // список созданных комнат
+    private List<GameObject> spawnedRooms = new List<GameObject>(); // СЃРїРёСЃРѕРє СЃРѕР·РґР°РЅРЅС‹С… РєРѕРјРЅР°С‚
     private void Start()
     {
         GenerMap();
@@ -21,14 +21,64 @@ public class Map : MonoBehaviour
     {
         for (int i = 0; i < numberOfRooms; i++)
         {
-            
-            //выбираем случайный макет комнаты
-            int randomIndex = Random.Range(0, roomPrefabs.Count);
-            GameObject newRoom = Instantiate(roomPrefabs[randomIndex]);
-            float roomPositionX =i * roomWidth;
-            float roomPositionY = 0f /*i* roomHeight*/;
-            newRoom.transform.position = new Vector2(roomPositionX, roomPositionY); //размещаем комнаты на карте
-            spawnedRooms.Add(newRoom); //добавляем созданную комнату в список
+
+
+            int randomI = Random.Range(0, 3);
+            if (randomI == 0)
+            {
+
+
+
+                //ГўГ»ГЎГЁГ°Г ГҐГ¬ Г±Г«ГіГ·Г Г©Г­Г»Г© Г¬Г ГЄГҐГІ ГЄГ®Г¬Г­Г ГІГ»
+                int randomIndex = Random.Range(0, roomPrefabs.Count);
+                GameObject newRoom = Instantiate(roomPrefabs[randomIndex]);
+                float roomPositionX = i * roomWidth;
+                float roomPositionY = 0f /*i* roomHeight*/;
+                newRoom.transform.position = new Vector2(roomPositionX, roomPositionY); //Г°Г Г§Г¬ГҐГ№Г ГҐГ¬ ГЄГ®Г¬Г­Г ГІГ» Г­Г  ГЄГ Г°ГІГҐ
+                spawnedRooms.Add(newRoom); //Г¤Г®ГЎГ ГўГ«ГїГҐГ¬ Г±Г®Г§Г¤Г Г­Г­ГіГѕ ГЄГ®Г¬Г­Г ГІГі Гў Г±ГЇГЁГ±Г®ГЄ
+
+            }
+            else if (randomI == 1)
+            {
+
+
+                //ГўГ»ГЎГЁГ°Г ГҐГ¬ Г±Г«ГіГ·Г Г©Г­Г»Г© Г¬Г ГЄГҐГІ ГЄГ®Г¬Г­Г ГІГ»
+                int randomIndex = Random.Range(0, roomPrefabs.Count);
+                GameObject newRoom = Instantiate(roomPrefabs[randomIndex]);
+                float roomPositionX = -i * roomWidth;
+                float roomPositionY = 0f /*i* roomHeight*/;
+                newRoom.transform.position = new Vector2(roomPositionX - i * roomWidth, roomPositionY); //Г°Г Г§Г¬ГҐГ№Г ГҐГ¬ ГЄГ®Г¬Г­Г ГІГ» Г­Г  ГЄГ Г°ГІГҐ
+                spawnedRooms.Add(newRoom); //Г¤Г®ГЎГ ГўГ«ГїГҐГ¬ Г±Г®Г§Г¤Г Г­Г­ГіГѕ ГЄГ®Г¬Г­Г ГІГі Гў Г±ГЇГЁГ±Г®ГЄ
+
+            }
+            else if (randomI == 2)
+            {
+
+
+                //ГўГ»ГЎГЁГ°Г ГҐГ¬ Г±Г«ГіГ·Г Г©Г­Г»Г© Г¬Г ГЄГҐГІ ГЄГ®Г¬Г­Г ГІГ»
+                int randomIndex = Random.Range(0, roomPrefabs.Count);
+                GameObject newRoom = Instantiate(roomPrefabs[randomIndex]);
+                float roomPositionX = 0f;
+                float roomPositionY = i * roomHeight;
+                newRoom.transform.position = new Vector2(roomPositionX, roomPositionY); //Г°Г Г§Г¬ГҐГ№Г ГҐГ¬ ГЄГ®Г¬Г­Г ГІГ» Г­Г  ГЄГ Г°ГІГҐ
+                spawnedRooms.Add(newRoom); //Г¤Г®ГЎГ ГўГ«ГїГҐГ¬ Г±Г®Г§Г¤Г Г­Г­ГіГѕ ГЄГ®Г¬Г­Г ГІГі Гў Г±ГЇГЁГ±Г®ГЄ
+
+            }
+            else if (randomI == 3)
+            {
+
+
+
+                //ГўГ»ГЎГЁГ°Г ГҐГ¬ Г±Г«ГіГ·Г Г©Г­Г»Г© Г¬Г ГЄГҐГІ ГЄГ®Г¬Г­Г ГІГ»
+                int randomIndex = Random.Range(0, roomPrefabs.Count);
+                GameObject newRoom = Instantiate(roomPrefabs[randomIndex]);
+                float roomPositionX = 0f;
+                float roomPositionY = -i * roomHeight;
+                newRoom.transform.position = new Vector2(roomPositionX, roomPositionY); //Г°Г Г§Г¬ГҐГ№Г ГҐГ¬ ГЄГ®Г¬Г­Г ГІГ» Г­Г  ГЄГ Г°ГІГҐ
+                spawnedRooms.Add(newRoom); //Г¤Г®ГЎГ ГўГ«ГїГҐГ¬ Г±Г®Г§Г¤Г Г­Г­ГіГѕ ГЄГ®Г¬Г­Г ГІГі Гў Г±ГЇГЁГ±Г®ГЄ
+
+            }
+
         }
     }
 
@@ -45,11 +95,11 @@ public class Map : MonoBehaviour
 }
 /*for (int i = 1; i < spawnedRooms.Count; i++)
 {
-    //выбираем случайную точку из предыдущей комнаты и текущей
+    //РІС‹Р±РёСЂР°РµРј СЃР»СѓС‡Р°Р№РЅСѓСЋ С‚РѕС‡РєСѓ РёР· РїСЂРµРґС‹РґСѓС‰РµР№ РєРѕРјРЅР°С‚С‹ Рё С‚РµРєСѓС‰РµР№
     Vector2 prevRoomEnd = spawnedRooms[i - 1].GetComponentInChildren<Room>().GetRandomEndPoint();
     Vector2 currentRoomStart = spawnedRooms[i].GetComponentInChildren<Room>().GetRandomStartPoint();
 
-    //создаем туннель
+    //СЃРѕР·РґР°РµРј С‚СѓРЅРЅРµР»СЊ
     GameObject tunnel = new GameObject("Tunnel");
     LineRenderer lineRenderer = tunnel.AddComponent<LineRenderer>();
     lineRenderer.startWidth = 0.1f;
