@@ -9,6 +9,7 @@ public class enemy_ii : MonoBehaviour
     [SerializeField] private float _chaseRadius;
     [SerializeField] private LayerMask _playerLayer;
     [SerializeField] private Transform _target;
+    public int health;
 
     private int _currentPathIndex;
     private bool _isChasing;
@@ -35,6 +36,10 @@ public class enemy_ii : MonoBehaviour
         }
 
         CheckForPlayer();
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void CheckForPlayer()
@@ -79,5 +84,9 @@ public class enemy_ii : MonoBehaviour
                 _currentPathIndex = 0;
             }
         }
+    }
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
     }
 }
