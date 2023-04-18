@@ -10,8 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4663103141640047950}
   - component: {fileID: 1519947205911288751}
-  - component: {fileID: 5602940188940837002}
-  - component: {fileID: 5602940188940837003}
+  - component: {fileID: 3588352591866939424}
   - component: {fileID: -910443517923980312}
   - component: {fileID: -5086360809989540060}
   m_Layer: 8
@@ -29,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2366740876093736177}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.668, y: 0.442, z: 0}
-  m_LocalScale: {x: 0.13327172, y: 0.14187384, z: 0.30503944}
+  m_LocalPosition: {x: -3.0608, y: 1.0884, z: 0}
+  m_LocalScale: {x: 0.27003235, y: 0.28746176, z: 0.61806446}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -88,7 +87,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5602940188940837002
+--- !u!114 &3588352591866939424
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,43 +96,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 2366740876093736177}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8140e95f529d6f2409c08fa23c843235, type: 3}
+  m_Script: {fileID: 11500000, guid: fe19772f672d821488d344c0557a6ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pathPoints: []
-  _speed: 0
-  _chaseRadius: 0
-  _playerLayer:
+  health: 13
+  speed: 6
+  deathEffect: {fileID: 1335612400786637116, guid: 9c6d0c04ab95af844a68f41bd2061512, type: 3}
+  damage: 0
+  startStopTime: 0.8
+  normalSpeed: 5
+  enemy:
     serializedVersion: 2
-    m_Bits: 0
-  _target: {fileID: 0}
-  health: 5
---- !u!61 &5602940188940837003
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2366740876093736177}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.10017872, y: -0.752841}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.88, y: 8.88}
-    newSize: {x: 8.88, y: 8.88}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5.9748077, y: 7.374319}
-  m_EdgeRadius: 0
+    m_Bits: 256
+  attackRange: 0
+  attackPos: {fileID: 0}
 --- !u!50 &-910443517923980312
 Rigidbody2D:
   serializedVersion: 4
@@ -146,7 +122,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -168,6 +144,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.075132996, y: -0.2692064}
-  m_Size: {x: 1.9175533, y: 8.341586}
+  m_Offset: {x: 0.075132996, y: -0.48844826}
+  m_Size: {x: 1.9175533, y: 13.722966}
   m_Direction: 0

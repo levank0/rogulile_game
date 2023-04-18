@@ -9,6 +9,10 @@ public class Bullet : MonoBehaviour
     public float distance;
     public int damage;
     public LayerMask whatIsSolid;
+    private void Start()
+    {
+        Invoke("DestroyBullet", lifetime);
+    }
 
     private void Update()
     {
@@ -18,9 +22,15 @@ public class Bullet : MonoBehaviour
             if (hitInfo.collider.CompareTag("Enemy"))
             {
                 hitInfo.collider.GetComponent<Enemy>().TakeDamage(damage);
+                
             }
-            Destroy(gameObject);
+            DestroyBulley();
+
         }
         transform.Translate(Vector2.up * speed * Time.deltaTime);
+    }
+    public void DestroyBulley()
+    {
+        Destroy(gameObject);
     }
 }

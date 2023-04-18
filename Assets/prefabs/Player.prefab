@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1534397765811481209}
   - component: {fileID: 6687540556491965330}
+  - component: {fileID: 903064677533603223}
   - component: {fileID: 6687540556491965329}
   - component: {fileID: 6687540556491965334}
   - component: {fileID: 6687540556491965335}
@@ -51,6 +52,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
+  health: 0
+--- !u!114 &903064677533603223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6230853892667258135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: decf94186f90f2a4495ece54a161a5e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
 --- !u!58 &6687540556491965329
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -316,6 +332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6687540556604004204}
   - component: {fileID: 6687540556604004207}
+  - component: {fileID: 1575504401961836230}
   m_Layer: 0
   m_Name: Vanya
   m_TagString: Untagged
@@ -390,6 +407,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1575504401961836230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6687540556604004205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: decf94186f90f2a4495ece54a161a5e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
 --- !u!1 &6687540557281448390
 GameObject:
   m_ObjectHideFlags: 0
