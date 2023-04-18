@@ -8,12 +8,12 @@ public class Player : MonoBehaviour
     public float speed;
     private Rigidbody2D rb;
     private Vector2 moveSpeed;
-    private Animator anim;
+    /*private Animator anim;*/
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        /*anim = GetComponent<Animator>();*/
     }
 
     private void Update()
@@ -23,14 +23,14 @@ public class Player : MonoBehaviour
         Vector2 moveDirection = new Vector2(horizontalInput, verticalInput); // создаем вектор движения
         
         moveSpeed = moveDirection * speed;
-        if (moveDirection.x == 0)
+        /*if (moveDirection.x == 0)
         {
             anim.SetBool("isrunner", false);
         }
         else
         {
             anim.SetBool("isrunner", true);
-        }
+        }*/
     }
     private void FixedUpdate()
     {
