@@ -63,7 +63,7 @@ public class Enemy : MonoBehaviour
     public void OnEnemyAttack()
     {
         Instantiate(deathEffect,player.transform.position, Quaternion.identity);
-        player.health -= damage;
+        player.currentHealth -= damage;
         timeBtwAttack = startTimeBtwAttack;
     }
     

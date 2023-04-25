@@ -10,19 +10,47 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveSpeed;
     /*private Animator anim;*/
-    public int health;
+    private int maxHealth = 100;
+    public int currentHealth;
+
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         /*anim = GetComponent<Animator>();*/
+        currentHealth = maxHealth;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("potion"))
+        {
+            
+            currentHealth= currentHealth + 20;
+
+
+            Destroy(other.gameObject);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            health -= 10; // уменьшаем здоровье игрока при столкновении с врагом
+            TakeDamage(10);
         }
+    }
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+    private void Die()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void Update()
@@ -40,18 +68,11 @@ public class Player : MonoBehaviour
         {
             anim.SetBool("isrunner", true);
         }*/
-        if(health<=0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
+        
     }
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + moveSpeed * Time.fixedDeltaTime);
     }
-    public void ChangeHealth(int healthValue)
-    {
-        health += healthValue;
-
-    }
+    
 }
